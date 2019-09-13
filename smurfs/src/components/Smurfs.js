@@ -18,7 +18,7 @@ function  Smurfs({ state, getSmurf }) {
     console.log(state)
     return (
         <div>
-            <h2>Village</h2>
+            <h1>Village</h1>
             {state.smurfs.map(smurf => (
                 <Smurf smurf={smurf}/>
             ))}
