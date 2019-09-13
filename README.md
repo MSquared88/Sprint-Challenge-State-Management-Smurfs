@@ -25,6 +25,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 - [ ] What problem does the context API help solve?
 
 It allows us to share data throughout a lot of nested components that depend on a single piece of data.
+No prop drilling.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
 

@@ -1,10 +1,24 @@
-import { 
-    FETCHING_SMURF_START,
-    FETCHING_SMURF_SUCCESS,
-    FETCHING_SMURF_FAIL,
+import {
+    //create
     POSTING_SMURF_START,
     POSTING_SMURF_SUCCESS,
     POSTING_SMURF_FAIL,
+
+    //read
+    FETCHING_SMURF_START,
+    FETCHING_SMURF_SUCCESS,
+    FETCHING_SMURF_FAIL,
+
+    //update
+    // UPDATE_SMURF_START,
+    // UPDATE_SMURF_SUCCESS,
+    // UPDATE_SMURF_FAIL,
+
+    //delete
+    // UPDATE_SMURF_START,
+    // UPDATE_SMURF_SUCCESS,
+    // UPDATE_SMURF_FAIL,
+    
 } from '../actions'
 
 
@@ -29,17 +43,31 @@ export const reducer = (state = initialState, action) => {
                 smurfs: action.payload,
                 fetching: false
             }
+        case FETCHING_SMURF_FAIL:
+            return {
+                ...state, 
+                fetching: false,
+                err: action.payload
+            }
+
         case POSTING_SMURF_START:
             return {
                 ...state, 
                 posting: true
             }
         case POSTING_SMURF_SUCCESS:
-                return {
-                    ...state, 
-                    posting: false,
-                    smurfs: [...state.smurfs, action.payload]
-                }
+            return {
+                ...state, 
+                posting: false,
+                smurfs: [...state.smurfs, action.payload]
+            }
+        case POSTING_SMURF_FAIL:
+            return {
+                ...state, 
+                posting: false,
+                err: action.payload
+            }    
+        
         default: 
         return state;
     };
